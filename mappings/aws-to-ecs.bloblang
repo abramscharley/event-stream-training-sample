@@ -1,0 +1,11 @@
+# Synthetic Bloblang-style mapping for training discussion only.
+root."@timestamp" = this.eventTime
+root.event.dataset = this.eventSource
+root.event.action = this.eventName
+root.cloud.region = this.awsRegion
+root.user.name = this.userIdentity.userName
+root.source.ip = this.sourceIPAddress
+root.user_agent.original = this.userAgent
+root.event.kind = "event"
+root.event.category = "authentication"
+root.cloud.provider = "aws"

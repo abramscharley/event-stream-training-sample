@@ -1,0 +1,18 @@
+{
+  "required": [
+    "@timestamp",
+    "event.dataset",
+    "event.action",
+    "cloud.region",
+    "user.name",
+    "source.ip"
+  ],
+  "field_types": {
+    "@timestamp": "string",
+    "event.dataset": "string",
+    "event.action": "string",
+    "cloud.region": "string",
+    "user.name": "string",
+    "source.ip": "string"
+  }
+}

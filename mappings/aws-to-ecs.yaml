@@ -1,0 +1,19 @@
+name: aws_cloudtrail_to_ecs
+source_model: aws_cloudtrail
+target_model: elastic_ecs
+version: 0.1.0
+mappings:
+  "@timestamp": "eventTime"
+  "event.dataset": "eventSource"
+  "event.action": "eventName"
+  "cloud.region": "awsRegion"
+  "user.name": "userIdentity.userName"
+  "source.ip": "sourceIPAddress"
+  "user_agent.original": "userAgent"
+constants:
+  "event.kind": "event"
+  "event.category": "authentication"
+  "cloud.provider": "aws"
+notes:
+  - "Synthetic mapping file for Cursor training."
+  - "Inspired by schema-mapping workflows; not a production ECS mapping."
