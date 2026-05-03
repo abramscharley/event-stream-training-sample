@@ -1,12 +1,19 @@
 from __future__ import annotations
 
+import sys
 import json
 from pathlib import Path
-from .mapper import load_mapping, transform_event
-from .validator import validate_event
+
+# Allow running this file both as:
+# - `python backend/src/app.py` (script)
+# - `python -m src.app` (module)
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.append(str(ROOT / "backend"))
+
+from src.mapper import load_mapping, transform_event
+from src.validator import validate_event
 
 # Project root directory (two levels up from this file)
-ROOT = Path(__file__).resolve().parents[2]
 
 
 def run_demo() -> dict:
@@ -24,6 +31,8 @@ def run_demo() -> dict:
 
     return {
         "raw_event": raw_event,
+        "mapping": mapping,
+        "schema": schema,
         "normalized_event": normalized,
         "validation_errors": validation_errors,
     }

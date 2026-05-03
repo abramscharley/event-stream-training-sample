@@ -1,0 +1,21 @@
+---
+description: Keep mapping changes synchronized across config, schema, tests, and demo UI
+alwaysApply: true
+---
+
+# Mapping Change Workflow
+
+When a change adds, removes, or renames a normalized field in this repo:
+
+- Update the mapping in `mappings/aws-to-ecs.yaml`.
+- Check whether the field must also be added to or removed from `schemas/ecs-required-fields.json`.
+- Update `tests/test_mapping.py` so the mapping behavior is explicitly verified.
+- If the frontend displays the affected field or validation output, update `frontend/src/App.jsx`.
+- Do not stop after editing only the mapping file if schema, tests, or demo UI would now be inconsistent.
+
+## Verification
+
+- Run `python -m pytest ../tests` from `backend/`.
+- If frontend behavior changed, run `npm run build` from `frontend/`.
+
+This rule exists because mapping changes in this repo are usually cross-file changes, and it is easy to make an incomplete update if you only edit the mapping config.
