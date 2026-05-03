@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Cursor debug evidence (runtime-specific; should never be committed)
+.cursor/debug-*.log
+
