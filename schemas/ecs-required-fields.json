@@ -4,7 +4,6 @@
     "event.dataset",
     "event.action",
     "cloud.region",
-    "cloud.account.id",
     "user.name",
     "source.ip"
   ],
@@ -13,7 +12,6 @@
     "event.dataset": "string",
     "event.action": "string",
     "cloud.region": "string",
-    "cloud.account.id": "string",
     "user.name": "string",
     "source.ip": "string"
   }

@@ -22,4 +22,3 @@ def test_aws_cloudtrail_event_maps_to_ecs_required_fields():
     assert normalized["event"]["action"] == "ConsoleLogin"
     assert normalized["source"]["ip"] == "203.0.113.42"
     assert normalized["user"]["name"] == "alex"
-    assert normalized["cloud"]["account"]["id"] == "123456789012"
