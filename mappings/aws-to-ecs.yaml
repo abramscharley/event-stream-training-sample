@@ -7,7 +7,6 @@ mappings:
   "event.dataset": "eventSource"
   "event.action": "eventName"
   "cloud.region": "awsRegion"
-  "cloud.account.id": "userIdentity.accountId"
   "user.name": "userIdentity.userName"
   "source.ip": "sourceIPAddress"
   "user_agent.original": "userAgent"
